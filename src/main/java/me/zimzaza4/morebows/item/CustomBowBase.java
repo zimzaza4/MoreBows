@@ -169,7 +169,7 @@ public class CustomBowBase extends ItemCustomTool {
                     Server.getInstance().getScheduler().scheduleRepeatingTask(new Task() {
                         @Override
                         public void onRun(int i) {
-                            if (entityShootBowEvent.getProjectile().isAlive()) {
+                            if (entityShootBowEvent.getProjectile().isAlive() && !entityShootBowEvent.getProjectile().isClosed()) {
                                 onTick(entityShootBowEvent.getProjectile());
                             } else {
                                 this.cancel();
