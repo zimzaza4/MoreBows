@@ -1,2 +1,2 @@
 # MoreBows
-A simple bow plugin For PowerNukkitX
+A simple bow plugin for PowerNukkitX
