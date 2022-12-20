@@ -175,7 +175,7 @@ public class CustomBowBase extends ItemCustomTool {
                                 this.cancel();
                             }
                         }
-                    }, 2);
+                    }, 1);
                     onShoot(entityShootBowEvent.getProjectile());
                     player.getLevel().addSound(player, Sound.RANDOM_BOW);
                 }

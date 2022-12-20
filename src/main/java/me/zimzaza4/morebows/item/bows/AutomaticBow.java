@@ -28,7 +28,7 @@ public class AutomaticBow extends CustomBowBase {
                     }
                     findAndShoot(player, ticksUsed);
                 }
-            }, 10);
+            }, 5);
         }
         return shoot;
     }

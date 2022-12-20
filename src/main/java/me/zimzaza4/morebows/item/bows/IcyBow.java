@@ -6,7 +6,9 @@ import cn.nukkit.entity.EntityLiving;
 import cn.nukkit.entity.projectile.EntityProjectile;
 import cn.nukkit.event.entity.ProjectileHitEvent;
 import cn.nukkit.level.particle.DestroyBlockParticle;
+import cn.nukkit.level.particle.DustParticle;
 import cn.nukkit.potion.Effect;
+import cn.nukkit.utils.BlockColor;
 import me.zimzaza4.morebows.item.CustomBowBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +23,7 @@ public class IcyBow extends CustomBowBase {
         if (event.getMovingObjectPosition().entityHit instanceof EntityLiving living) {
             Effect effect = Effect.getEffect(Effect.SLOWNESS);
             effect.setDuration(100);
-            effect.setAmplifier(3);
+            effect.setAmplifier(4);
             living.addEffect(effect);
 
         }
