@@ -1,7 +1,11 @@
 package me.zimzaza4.morebows.item.bows;
 
+import cn.nukkit.Server;
+import cn.nukkit.entity.projectile.EntityProjectile;
 import cn.nukkit.event.entity.ProjectileHitEvent;
 import cn.nukkit.level.Explosion;
+import cn.nukkit.level.particle.FlameParticle;
+import cn.nukkit.scheduler.Task;
 import me.zimzaza4.morebows.item.CustomBowBase;
 
 public class TNTBow extends CustomBowBase {
@@ -12,5 +16,16 @@ public class TNTBow extends CustomBowBase {
     @Override
     public void onHit(ProjectileHitEvent event) {
         new Explosion(event.getEntity(), 2.0f, event.getEntity()).explodeB();
+        Server.getInstance().getScheduler().scheduleDelayedTask(new Task() {
+            @Override
+            public void onRun(int i) {
+                event.getEntity().kill();
+            }
+        }, 1);
+    }
+
+    @Override
+    protected void onTick(EntityProjectile projectile) {
+        projectile.level.addParticle(new FlameParticle(projectile));
     }
 }

@@ -8,9 +8,7 @@ import cn.nukkit.item.Item;
 import cn.nukkit.item.customitem.ItemCustom;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
-import me.zimzaza4.morebows.item.bows.IcyBow;
-import me.zimzaza4.morebows.item.bows.TNTBow;
-import me.zimzaza4.morebows.item.bows.TeleportBow;
+import me.zimzaza4.morebows.item.bows.*;
 import me.zimzaza4.morebows.listeners.ProjectileListener;
 
 import java.util.ArrayList;
@@ -32,7 +30,7 @@ public class MoreBows extends PluginBase {
         Server.getInstance().getPluginManager().registerEvents(new ProjectileListener(), this);
 
         try {
-            Item.registerCustomItem(List.of(IcyBow.class, TeleportBow.class, TNTBow.class));
+            Item.registerCustomItem(List.of(IcyBow.class, TeleportBow.class, TNTBow.class, AutomaticBow.class, ThunderBow.class));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,10 +38,11 @@ public class MoreBows extends PluginBase {
         CraftingManager craftingManager = Server.getInstance().getCraftingManager();
 
 
-        craftingManager.registerShapedRecipe(new ShapedRecipe(new IcyBow(), RECIPE, getBowRecipeMap(Item.get(Item.ICE)), new ArrayList<>()));
-        craftingManager.registerShapedRecipe(new ShapedRecipe(new TNTBow(), RECIPE, getBowRecipeMap(Item.get(Item.TNT)), new ArrayList<>()));
-        craftingManager.registerShapedRecipe(new ShapedRecipe(new TeleportBow(), RECIPE, getBowRecipeMap(Item.get(Item.ENDER_PEARL)), new ArrayList<>()));
-
+        craftingManager.registerRecipe(new ShapedRecipe(new IcyBow(), RECIPE, getBowRecipeMap(Item.get(Item.ICE)), new ArrayList<>()));
+        craftingManager.registerRecipe(new ShapedRecipe(new TNTBow(), RECIPE, getBowRecipeMap(Item.get(Item.TNT)), new ArrayList<>()));
+        craftingManager.registerRecipe(new ShapedRecipe(new TeleportBow(), RECIPE, getBowRecipeMap(Item.get(Item.ENDER_PEARL)), new ArrayList<>()));
+        craftingManager.registerRecipe(new ShapedRecipe(new AutomaticBow(), RECIPE, getBowRecipeMap(Item.get(Item.REDSTONE_BLOCK)), new ArrayList<>()));
+        craftingManager.registerRecipe(new ShapedRecipe(new ThunderBow(), RECIPE, getBowRecipeMap(Item.get(Item.GOLD_BLOCK)), new ArrayList<>()));
         craftingManager.rebuildPacket();
     }
 

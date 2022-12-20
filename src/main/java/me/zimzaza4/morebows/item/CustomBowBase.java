@@ -23,6 +23,7 @@ import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.nbt.tag.DoubleTag;
 import cn.nukkit.nbt.tag.FloatTag;
 import cn.nukkit.nbt.tag.ListTag;
+import cn.nukkit.scheduler.Task;
 import me.zimzaza4.morebows.item.data.ArrowMetadata;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -74,6 +75,10 @@ public class CustomBowBase extends ItemCustomTool {
     @PowerNukkitDifference(info = "Using new method to play sounds", since = "1.4.0.0-PN")
     @Override
     public boolean onRelease(Player player, int ticksUsed) {
+        return findAndShoot(player, ticksUsed);
+    }
+
+    protected boolean findAndShoot(Player player, int ticksUsed) {
         Item itemArrow = Item.get(Item.ARROW, 0, 1);
 
         Inventory inventory = player.getOffhandInventory();
@@ -84,7 +89,7 @@ public class CustomBowBase extends ItemCustomTool {
             return false;
         }
 
-        double damage = 2;
+        double damage = getBowDamage();
 
         Enchantment bowDamage = this.getEnchantment(Enchantment.ID_BOW_POWER);
         if (bowDamage != null && bowDamage.getLevel() > 0) {
@@ -161,12 +166,21 @@ public class CustomBowBase extends ItemCustomTool {
                 } else {
                     entityShootBowEvent.getProjectile().spawnToAll();
                     entityShootBowEvent.getProjectile().setMetadata("morebows:custom_arrow_data", new ArrowMetadata(this));
+                    Server.getInstance().getScheduler().scheduleRepeatingTask(new Task() {
+                        @Override
+                        public void onRun(int i) {
+                            if (entityShootBowEvent.getProjectile().isAlive()) {
+                                onTick(entityShootBowEvent.getProjectile());
+                            } else {
+                                this.cancel();
+                            }
+                        }
+                    }, 2);
                     onShoot(entityShootBowEvent.getProjectile());
                     player.getLevel().addSound(player, Sound.RANDOM_BOW);
                 }
             }
         }
-
         return true;
     }
 
@@ -174,7 +188,12 @@ public class CustomBowBase extends ItemCustomTool {
         return Item.get(Item.ARROW);
     }
 
+    protected void onTick(EntityProjectile projectile) {
+    }
 
+    protected int getBowDamage() {
+        return 2;
+    }
     protected void onShoot(EntityProjectile projectile) {
 
     }
@@ -182,5 +201,6 @@ public class CustomBowBase extends ItemCustomTool {
     public void onHit(ProjectileHitEvent event) {
 
     }
+
 
 }

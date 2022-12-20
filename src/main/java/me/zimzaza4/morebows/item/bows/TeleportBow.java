@@ -1,11 +1,14 @@
 package me.zimzaza4.morebows.item.bows;
 
 import cn.nukkit.entity.projectile.EntityArrow;
+import cn.nukkit.entity.projectile.EntityProjectile;
 import cn.nukkit.event.entity.EntityDamageByBlockEvent;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.event.entity.EntityDamageEvent;
 import cn.nukkit.event.entity.ProjectileHitEvent;
 import cn.nukkit.level.Sound;
+
+import cn.nukkit.level.particle.PortalParticle;
 import me.zimzaza4.morebows.item.CustomBowBase;
 
 public class TeleportBow extends CustomBowBase {
@@ -22,7 +25,13 @@ public class TeleportBow extends CustomBowBase {
 
                 arrow.shootingEntity.attack(new EntityDamageByEntityEvent(arrow, arrow.shootingEntity, EntityDamageEvent.DamageCause.PROJECTILE, 5));
                 arrow.level.addSound(arrow, Sound.MOB_ENDERMEN_PORTAL);
+                arrow.kill();
             }
         }
+    }
+
+    @Override
+    protected void onTick(EntityProjectile projectile) {
+        projectile.level.addParticle(new PortalParticle(projectile));
     }
 }

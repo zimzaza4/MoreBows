@@ -1,8 +1,11 @@
 package me.zimzaza4.morebows.item.bows;
 
+import cn.nukkit.block.Block;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.EntityLiving;
+import cn.nukkit.entity.projectile.EntityProjectile;
 import cn.nukkit.event.entity.ProjectileHitEvent;
+import cn.nukkit.level.particle.DestroyBlockParticle;
 import cn.nukkit.potion.Effect;
 import me.zimzaza4.morebows.item.CustomBowBase;
 import org.jetbrains.annotations.NotNull;
@@ -22,5 +25,10 @@ public class IcyBow extends CustomBowBase {
             living.addEffect(effect);
 
         }
+    }
+
+    @Override
+    protected void onTick(EntityProjectile projectile) {
+        projectile.level.addParticle(new DestroyBlockParticle(projectile, Block.get(Block.ICE)));
     }
 }
