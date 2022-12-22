@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class ThunderBow extends CustomBowBase {
     public ThunderBow() {
-        super("morebows:thunder_bow", "§e闪电弓", "thunder_bow");
+        super("morebows:thunder_bow", null, "thunder_bow");
     }
 
     @Override

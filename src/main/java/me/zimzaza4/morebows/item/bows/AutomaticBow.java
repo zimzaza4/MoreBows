@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class AutomaticBow extends CustomBowBase {
     public AutomaticBow() {
-        super("morebows:automatic_bow", "连发弓", "automatic_bow");
+        super("morebows:automatic_bow", null, "automatic_bow");
     }
 
     @Override

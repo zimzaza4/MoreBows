@@ -10,7 +10,7 @@ import me.zimzaza4.morebows.item.CustomBowBase;
 
 public class TNTBow extends CustomBowBase {
     public TNTBow() {
-        super("morebows:tnt_bow", "TNT弓", "tnt_bow");
+        super("morebows:tnt_bow", null, "tnt_bow");
     }
 
     @Override

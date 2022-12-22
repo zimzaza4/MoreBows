@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class IcyBow extends CustomBowBase {
     public IcyBow() {
-        super("morebows:icy_bow", "§b冰弓", "icy_bow");
+        super("morebows:icy_bow", null, "icy_bow");
     }
 
     @Override

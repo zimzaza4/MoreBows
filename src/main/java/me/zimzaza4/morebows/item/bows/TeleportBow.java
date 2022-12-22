@@ -13,7 +13,7 @@ import me.zimzaza4.morebows.item.CustomBowBase;
 
 public class TeleportBow extends CustomBowBase {
     public TeleportBow() {
-        super("morebows:teleport_bow", "传送弓", "teleport_bow");
+        super("morebows:teleport_bow", null, "teleport_bow");
     }
 
 
