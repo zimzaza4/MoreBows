@@ -51,7 +51,6 @@ public class CustomBowBase extends ItemCustomTool {
                             .getCompound("item_properties")
                             .putInt("use_duration", Integer.MAX_VALUE)
                             .putCompound("minecraft:chargeable", new CompoundTag().putFloat("movement_modifier", 0.35F));
-
                 });
     }
 
@@ -79,7 +78,7 @@ public class CustomBowBase extends ItemCustomTool {
     }
 
     protected boolean findAndShoot(Player player, int ticksUsed) {
-        Item itemArrow = Item.get(Item.ARROW, 0, 1);
+        Item itemArrow = getArrowType();
 
         Inventory inventory = player.getOffhandInventory();
 

@@ -5,6 +5,7 @@ import cn.nukkit.inventory.CraftingManager;
 import cn.nukkit.inventory.ShapedRecipe;
 import cn.nukkit.item.Item;
 import cn.nukkit.plugin.PluginBase;
+import me.zimzaza4.morebows.item.arrows.*;
 import me.zimzaza4.morebows.item.bows.*;
 import me.zimzaza4.morebows.listeners.ProjectileListener;
 
@@ -27,7 +28,8 @@ public class MoreBows extends PluginBase {
         Server.getInstance().getPluginManager().registerEvents(new ProjectileListener(), this);
 
         try {
-            Item.registerCustomItem(List.of(IcyBow.class, TeleportBow.class, TNTBow.class, AutomaticBow.class, ThunderBow.class));
+            Item.registerCustomItem(List.of(IceArrow.class, TeleportArrow.class, TNTArrow.class, ThunderArrow.class, BlazeArrow.class, ShulkerArrow.class));
+            Item.registerCustomItem(List.of(IcyBow.class, TeleportBow.class, TNTBow.class, AutomaticBow.class, ThunderBow.class, BlazeBow.class, ShulkerBow.class));
         } catch (Exception e) {
             e.printStackTrace();
         }

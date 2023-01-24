@@ -3,10 +3,12 @@ package me.zimzaza4.morebows.item.bows;
 import cn.nukkit.Server;
 import cn.nukkit.entity.projectile.EntityProjectile;
 import cn.nukkit.event.entity.ProjectileHitEvent;
+import cn.nukkit.item.Item;
 import cn.nukkit.level.Explosion;
 import cn.nukkit.level.particle.FlameParticle;
 import cn.nukkit.scheduler.Task;
 import me.zimzaza4.morebows.item.CustomBowBase;
+import me.zimzaza4.morebows.item.arrows.TNTArrow;
 
 public class TNTBow extends CustomBowBase {
     public TNTBow() {
@@ -27,5 +29,10 @@ public class TNTBow extends CustomBowBase {
     @Override
     protected void onTick(EntityProjectile projectile) {
         projectile.level.addParticle(new FlameParticle(projectile));
+    }
+
+    @Override
+    public Item getArrowType() {
+        return new TNTArrow();
     }
 }

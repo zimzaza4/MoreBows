@@ -6,10 +6,12 @@ import cn.nukkit.event.entity.EntityDamageByBlockEvent;
 import cn.nukkit.event.entity.EntityDamageByEntityEvent;
 import cn.nukkit.event.entity.EntityDamageEvent;
 import cn.nukkit.event.entity.ProjectileHitEvent;
+import cn.nukkit.item.Item;
 import cn.nukkit.level.Sound;
 
 import cn.nukkit.level.particle.PortalParticle;
 import me.zimzaza4.morebows.item.CustomBowBase;
+import me.zimzaza4.morebows.item.arrows.TeleportArrow;
 
 public class TeleportBow extends CustomBowBase {
     public TeleportBow() {
@@ -33,5 +35,10 @@ public class TeleportBow extends CustomBowBase {
     @Override
     protected void onTick(EntityProjectile projectile) {
         projectile.level.addParticle(new PortalParticle(projectile));
+    }
+
+    @Override
+    public Item getArrowType() {
+        return new TeleportArrow();
     }
 }

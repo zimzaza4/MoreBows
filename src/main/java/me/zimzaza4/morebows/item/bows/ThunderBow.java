@@ -1,17 +1,14 @@
 package me.zimzaza4.morebows.item.bows;
 
 import cn.nukkit.Server;
-import cn.nukkit.entity.Entity;
-import cn.nukkit.entity.EntityLiving;
 import cn.nukkit.entity.projectile.EntityProjectile;
 import cn.nukkit.entity.weather.EntityLightning;
-import cn.nukkit.entity.weather.EntityLightningStrike;
 import cn.nukkit.event.entity.ProjectileHitEvent;
+import cn.nukkit.item.Item;
 import cn.nukkit.level.particle.LavaDripParticle;
 import cn.nukkit.scheduler.Task;
 import me.zimzaza4.morebows.item.CustomBowBase;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import me.zimzaza4.morebows.item.arrows.ThunderArrow;
 
 public class ThunderBow extends CustomBowBase {
     public ThunderBow() {
@@ -33,5 +30,10 @@ public class ThunderBow extends CustomBowBase {
             }
         }, 1);
 
+    }
+
+    @Override
+    public Item getArrowType() {
+        return new ThunderArrow();
     }
 }
