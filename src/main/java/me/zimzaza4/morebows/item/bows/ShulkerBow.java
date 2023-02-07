@@ -21,7 +21,6 @@ public class ShulkerBow extends CustomBowBase {
             effect.setDuration(200);
             effect.setAmplifier(0);
             living.addEffect(effect);
-
         }
     }
     @Override

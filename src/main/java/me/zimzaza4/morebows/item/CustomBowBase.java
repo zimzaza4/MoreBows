@@ -168,7 +168,8 @@ public class CustomBowBase extends ItemCustomTool {
                     Server.getInstance().getScheduler().scheduleRepeatingTask(new Task() {
                         @Override
                         public void onRun(int i) {
-                            if (entityShootBowEvent.getProjectile().isAlive() && !entityShootBowEvent.getProjectile().isClosed()) {
+                            var projectile = entityShootBowEvent.getProjectile();
+                            if (projectile.isAlive() && !projectile.isClosed() && !projectile.isCollided) {
                                 onTick(entityShootBowEvent.getProjectile());
                             } else {
                                 this.cancel();
@@ -187,19 +188,13 @@ public class CustomBowBase extends ItemCustomTool {
         return Item.get(Item.ARROW);
     }
 
-    protected void onTick(EntityProjectile projectile) {
-    }
+    protected void onTick(EntityProjectile projectile) {}
 
     protected int getBowDamage() {
         return 2;
     }
-    protected void onShoot(EntityProjectile projectile) {
 
-    }
+    protected void onShoot(EntityProjectile projectile) {}
 
-    public void onHit(ProjectileHitEvent event) {
-
-    }
-
-
+    public void onHit(ProjectileHitEvent event) {}
 }
