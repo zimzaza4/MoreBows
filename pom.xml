@@ -6,7 +6,7 @@
 
     <groupId>me.zimzaza4</groupId>
     <artifactId>MoreBows</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,7 +58,7 @@
         <dependency>
             <groupId>cn.powernukkitx</groupId>
             <artifactId>powernukkitx</artifactId>
-            <version>1.19.50-r2</version>
+            <version>1.19.50-r3</version>
         </dependency>
         <dependency>
             <groupId>com.github.IWareQ</groupId>
