@@ -1,0 +1,48 @@
+{
+  "resource_pack_name": "bow_custom",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "ice_arrow": {
+      "textures": "textures/items/arrow/ice_arrow.png"
+    },
+    "tnt_arrow": {
+      "textures": "textures/items/arrow/tnt_arrow.png"
+    },
+    "blaze_arrow": {
+      "textures": "textures/items/arrow/blaze_arrow.png"
+    },
+    "ender_arrow": {
+      "textures": "textures/items/arrow/ender_arrow.png"
+    },
+    "thunder_arrow": {
+      "textures": "textures/items/arrow/thunder_arrow"
+    },
+    "shulker_arrow": {
+      "textures": "textures/items/arrow/shulker_arrow.png"
+    },
+    "automatic_bow": {
+      "textures": "textures/items/bows/automatic_bow/automatic_bow_standby"
+    },
+    "icy_bow": {
+      "textures": "textures/items/bows/icy_bow/icy_bow_standby"
+    },
+    "tnt_bow": {
+      "textures": "textures/items/bows/tnt_bow/explosive_bow_standby"
+    },
+    "teleport_bow": {
+      "textures": "textures/items/bows/teleport_bow/ender_bow_standby"
+    },
+    "diamond_bow": {
+      "textures": "textures/items/bows/diamond_bow/diamond_bow_standby"
+    },
+    "thunder_bow": {
+      "textures": "textures/items/bows/thunder_bow/thunder_bow_standby"
+    },
+    "blaze_bow": {
+      "textures": "textures/items/bows/blaze_bow/blaze_bow_standby"
+    },
+    "shulker_bow": {
+      "textures": "textures/items/bows/shulker_bow/shulker_bow_standby"
+    }
+  }
+}

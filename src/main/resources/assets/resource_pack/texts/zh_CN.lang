@@ -1,0 +1,15 @@
+item.morebows:tnt_bow=TNT弓
+item.morebows:teleport_bow=传送弓
+item.morebows:automatic_bow=自动弓
+item.morebows:thunder_bow=§e闪电弓
+item.morebows:icy_bow=§b冰弓
+item.morebows:blaze_bow=§c烈焰弓
+item.morebows:shulker_bow=§e潜影弓
+item.morebows:blaze_arrow=烈焰箭
+item.morebows:shulker_arrow=潜影箭
+item.morebows:ender_arrow=传送箭
+item.morebows:ice_arrow=冰箭
+item.morebows:thunder_arrow=雷霆之箭
+item.morebows:tnt_arrow=TNT箭
+
+morebows.ui.arrow_table=制箭台

@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "More Bows",
+        "name": "More Bows",
+        "uuid": "6b8fe6f6-d8e9-476f-8642-57e8a6d0d66b",
+        "version": [0, 3, 0],
+        "min_engine_version": [ 1, 13, 0 ]
+    },
+    "modules": [
+        {
+            "description": "More Bow!",
+            "type": "resources",
+            "uuid": "a1b780d8-82b0-406d-b2cb-4f20ace79c32",
+            "version": [0, 3, 0]
+        }
+    ]
+}

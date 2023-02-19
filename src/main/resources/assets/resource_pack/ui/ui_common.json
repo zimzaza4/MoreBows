@@ -1,0 +1,17 @@
+{
+  "arrow_table": {
+    "type": "image",
+    "texture": "textures/ui/arrow_table",
+    "offset": [
+      0,
+      0
+    ],
+    "size": [
+      176,
+      66
+    ],
+    "fill": true,
+    "layer": 7,
+    "alpha": 1
+  }
+}
